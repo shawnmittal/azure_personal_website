@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/home.css') }}">
+{% endblock %}
+
+{% block body %}
+<header>
+    <div>
+        <h1 class="title-text">Shawn Mittal</h1 class="title-text">
+    </div>
+
+    <div>
+        <a target="_blank" href="https://github.com/shawnmittal">
+            <img class="title-logo" src="static/images/github.svg">
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/in/shawnmittal/">
+            <img class="title-logo" src="static/images/linkedin-logo.svg">
+        </a>
+    </div>
+</header>
+
+<section>
+    <div class="body-text">
+        <p>
+            I'm a data scientist and technologist with experience in helping government organizations solve technical challenges. 
+            I like gadgets, starting software projects, backpacking, and my cat.
+        </p>
+
+        <p>
+            Feel free to check out some of my projects and writings. You can get in touch with me via 
+            <a href="https://www.linkedin.com/in/shawnmittal">LinkedIn</a>,  or via <a href="mailto:shawn.mittal@gmail.com">Email</a>.
+        </p>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/timeline.css') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col s12 m4 l8">
+            <div class="col s12 m4 l8">
+                <span class="date">2013</span>
+                <ul>
+                    <li>
+                        <div class="icon-title">
+                            <i class="tiny material-icons">school</i>
+                            <a href="/timeline" class="title">[Masters, Virginia Tech]</a>
+                        </div>
+                        <span class="content">
+                            Started an M.Sc. in Mechanical Engineering with a certificate in Nuclear Engineering.
+                        </span>
+                    </li>
+                    <li>
+                        <div class="icon-title">
+                            <i class="tiny material-icons">school</i>
+                            <a href="/timeline" class="title">[Undergrad, Virginia Tech]</a>
+                        </div>
+                        <span class="content">
+                            Graduated with a B.Sc. in Mechanical Engineering with a concentration in Nuclear Engineering. 
+                        </span>
+                    </li>
+                </ul>
+                <span class="date">2010</span>
+                <ul>
+                    <li>
+                        <div class="icon-title">
+                            <i class="tiny material-icons">work</i>
+                            <a href="/timeline" class="title">[Job, VT 4Help]</a>
+                        </div>
+                        <span class="content">
+                            Started working a tech support job at Virginia Tech 4Help, helping students and faculty with tech problems. 
+                        </span>
+                    </li>
+                </ul>
+                <span class="date">2009</span>
+                <ul>
+                    <li>
+                        <div class="icon-title">
+                            <i class="tiny material-icons">school</i>
+                            <a href="/timeline" class="title">[Undergrad, Virginia Tech]</a>
+                        </div>
+                        <span class="content">
+                            Started undergrad at Virginia Tech in Mechanical Engineering. 
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+
+    <!--<li><a href="/projects/" class="title">[]</a>
+        <span class="content"></span></li>-->
+    {% endblock %}
