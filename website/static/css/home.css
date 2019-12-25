@@ -46,7 +46,7 @@ section div {
 
 @media only screen and (max-width: 1094px) {
     .body-text {
-        width: 100%;
+        width: 95%;
     }
     .title-text {
         font-size: 60px;
