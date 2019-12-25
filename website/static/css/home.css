@@ -49,6 +49,7 @@ section div {
         width: 100%;
     }
     .title-text {
-        font-size: 70px;
+        font-size: 60px;
+        font-size: 90vw;
     }
 }
