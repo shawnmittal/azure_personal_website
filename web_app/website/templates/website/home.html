@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{% extends "website/base.html" %}
 
 {% block head %}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/home.css') }}">
+<link type="text/css" rel="stylesheet" href="{{ url_for('.static', filename = 'css/home.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -14,10 +14,10 @@
 
     <div>
         <a target="_blank" href="https://github.com/shawnmittal">
-            <img class="title-logo" src="static/images/github.svg">
+            <img class="title-logo" src="website/static/images/github.svg">
         </a>
         <a target="_blank" href="https://www.linkedin.com/in/shawnmittal/">
-            <img class="title-logo" src="static/images/linkedin-logo.svg">
+            <img class="title-logo" src="website/static/images/linkedin-logo.svg">
         </a>
     </div>
 </header>

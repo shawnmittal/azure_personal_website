@@ -1,8 +1,8 @@
-{% extends "base.html" %}
+{% extends "website/base.html" %}
 
 {% block head %}
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/timeline.css') }}">
+<link type="text/css" rel="stylesheet" href="{{ url_for('.static', filename = 'css/timeline.css') }}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -57,7 +57,7 @@
                         </div>
                         <span class="content">
                             Completed M.Sc. in Mechanical Engineering with concentration in Nuclear Engineering. 
-                            Finished thesis titled: <a href="https://vtechworks.lib.vt.edu/handle/10919/52705">
+                            Finished thesis titled: <a href="https://vtechworks.lib.vt.edu/handle/10919/52705" target="blank">
                             Computational Analysis and Design of the Electrothermal Energetic Plasma Source Concept</a>
                         </span>
                     </li>

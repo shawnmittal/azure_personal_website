@@ -1,0 +1,18 @@
+{% extends "website/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link type="text/css" rel="stylesheet" href="{{ url_for('.static', filename = 'css/projects.css') }}">
+{% endblock %}
+
+{% block body %}
+<section>
+    <div class="body-text">
+        <h1>Bokeh Example</h1>
+        <p>
+            <a class="navbar-ref" href="/projects/bokeh_example" target="blank">Bokeh Example</a></li>
+        </p>
+    </div>
+</section>
+{% endblock %}
