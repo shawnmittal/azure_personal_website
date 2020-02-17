@@ -1,8 +1,6 @@
 {% extends "website/base.html" %}
 
 {% block head %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <link type="text/css" rel="stylesheet" href="{{ url_for('.static', filename = 'css/projects.css') }}">
 {% endblock %}
 
@@ -11,7 +9,13 @@
     <div class="body-text">
         <h1>Bokeh Example</h1>
         <p>
-            <a class="navbar-ref" href="/projects/bokeh_example" target="blank">Bokeh Example</a></li>
+            View Example Here: <a href="/projects/bokeh_example" target="blank">Bokeh Example</a><br>
+            View Code Here: <a href="https://github.com/shawnmittal/bokeh_flask_dashboard_example" target="blank">GitHub</a>
+        </p>
+        <p>
+            This example application is meant to show how Bokeh, a Python library for interactive visualization, could be integrated
+            with a simple flask application. For demonstration purposes, I've used the titanic dataset and created some simple
+            charts that can be re-drawn via a class selector button.
         </p>
     </div>
 </section>
