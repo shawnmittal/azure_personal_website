@@ -11,3 +11,4 @@ LICENSE
 __pycache__
 env
 tests/
+.github/
