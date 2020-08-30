@@ -32,10 +32,10 @@ jobs:
       run: docker build -t localbuild/shawnmittal:test .
     - name: run docker container
       run: docker run -d -p 5000:5000 localbuild/shawnmittal:test
-    - name: sleep for 10 seconds
+    - name: sleep for 20 seconds
       uses: jakejarvis/wait-action@master
       with:
-        time: '10s'
+        time: '20s'
     - name: run unittests
       run: python3 ./tests/testnlpapi.py
     - name: container vulnerability scan
