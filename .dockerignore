@@ -5,8 +5,9 @@ docker-compose*
 .dockerignore
 .git
 .gitignore
-README.md
+readme.md
 LICENSE
 .vscode
 __pycache__
 env
+tests/
