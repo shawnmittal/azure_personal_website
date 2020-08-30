@@ -31,6 +31,8 @@ ENV UWSGI_INI uwsgi.ini
 WORKDIR /web_app
 COPY . /web_app
 
+RUN mv ./web_app/nlp_example/nltk_data /usr/local/share/nltk_data
+
 COPY requirements.txt /
 RUN pip3 install --upgrade pip
 RUN pip3 install --no-cache-dir -r /requirements.txt

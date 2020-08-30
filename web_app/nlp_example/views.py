@@ -9,7 +9,7 @@ nlpExample = Blueprint('nlp_example', __name__,
                 static_url_path='/nlp_example/static')
 
 
-@nlpExample.route('/nlp_example', methods=['POST'])
+@nlpExample.route('/nlp_example/api', methods=['POST'])
 def eval_url():
     url = request.get_json()
     article = get_and_parse(url)
