@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+      # not using standard actions/python@v2. causes dependency problems with some packages
+    - name: install python and dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install python3.7 python3-pip
+        sudo rm /usr/bin/python
+        sudo ln -s /usr/bin/python3.7 /usr/bin/python
+    - name: run linter for python code
+      run: |
+        pip3 install flake8
+        sudo apt-get install flake8
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistic
+    - name: build docker container
+      run: docker build -t localbuild/shawnmittal:test .
+    - name: run docker container
+      run: docker run -d -p 5000:5000 localbuild/shawnmittal:test
+    - name: sleep for 10 seconds
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '10s'
+    - name: run unittests
+      run: python3 ./tests/testnlpapi.py
+    - name: container vulnerability scan
+      uses: anchore/scan-action@master
+      with:
+        image-reference: "localbuild/shawnmittal:test"
+        dockerfile-path: "Dockerfile"
+        fail-build: true
+    - name: anchore inline scan JSON results
+      run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
