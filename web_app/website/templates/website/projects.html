@@ -10,12 +10,40 @@
         <h1>Bokeh Example</h1>
         <p>
             View Example Here: <a href="/projects/bokeh_example" target="blank">Bokeh Example</a><br>
-            View Code Here: <a href="https://github.com/shawnmittal/bokeh_flask_dashboard_example" target="blank">GitHub</a>
+            View Code Here: <a href="https://github.com/shawnmittal/bokeh_flask_dashboard_example"
+                target="blank">GitHub</a>
         </p>
         <p>
-            This example application is meant to show how Bokeh, a Python library for interactive visualization, could be integrated
-            with a simple flask application. For demonstration purposes, I've used the titanic dataset and created some simple
+            This example application is meant to show how Bokeh, a Python library for interactive visualization, could
+            be integrated
+            with a simple flask application. For demonstration purposes, I've used the titanic dataset and created some
+            simple
             charts that can be re-drawn via a class selector button.
+        </p>
+        <p>
+            It also serves as a test endpoint to determine if bokeh dashboards hosted on Azure can be accessed on
+            US Government computer networks without loss in functionality.
+        </p>
+
+        <h1>VADER Sentiment NLP Example</h1>
+        <p>
+            View Example Here: <a href="/projects/nlp_example/frontend" target="blank">VADER Sentiment NLP Example</a>
+            View Code Here: <a href="https://github.com/shawnmittal/nlp_text_eval" target="blank">GitHub</a>
+        </p>
+        <p>
+            This is an example application that takes in news article urls and generates a summary, keywords, and
+            sentiment score. The application uses NLTK's implementation of VADER (Valence Aware Dictionary for Sentiment
+            Reasoning). VADER sentimental analysis uses a dictionary that maps features to sentiment scores. The overall
+            sentiment score is obtained by summing up the individual sentiment scores and obtaining an average. For
+            example, words like 'angry', 'sad', 'upset', 'distress' all convey a negative sentiment. In addition
+            VADER is takes into account the basic context of these words, such as “he was not happy” as a negative
+            statement. VADER also takes into account capitilization and punctuation.
+        </p>
+        <p>
+            That being said, since VADER is not a supervised learning approach geared towards news articles in
+            particular, you will probably see a good number of "wrong" composite sentiment scores for a given article.
+            This is to be expected since training a model on a large scale dataset is time/resource intensive which is
+            why it's my day job.
         </p>
     </div>
 </section>

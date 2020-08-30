@@ -1,13 +1,27 @@
+{% extends 'nlp_example/base.html' %}
+
 {% block content %}
+<section>
     <div class="container">
-        <form name="url-form" action="" method="POST">
-            URL : <input type="text" name="url-select"><br>
-            <input type="submit" value="Submit"><br>
-        </form>
+        <div class="row">
+            <form name="url-form" action="" method="POST">
+                URL : <input type="text" name="url-select">
+                <input type="submit" value="Submit"><br><br>
+            </form>
+        </div>
+        <div>
+            <h3>Selected URL to Analyze</h3><br>
+            <p>{{ selected_url }}</p>
+            <h3>Title</h3><br>
+            <p>{{ article_title }}</p>
+            <h3>Article Keywords</h3><br>
+            <p>{{ article_keywords }}</p>
+            <h3>Article Summary</h3><br>
+            <p>{{ article_summary }}</p>
+            <h3>Sentiment</h3><br>
+            <p>{{ article_sentiment }}</p>
+        </div>
     </div>
-    <p>{{ selected_url }}</p>
-    <p>{{ article_title }}</p>
-    <p>{{ article_keywords }}</p>
-    <p>{{ article_summary }}</p>
-    <p>{{ article_sentiment }}</p>
+</section>
+
 {% endblock %}

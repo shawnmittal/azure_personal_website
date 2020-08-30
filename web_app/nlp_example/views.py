@@ -1,4 +1,4 @@
-import requests
+from validator_collection import checkers
 from flask import Blueprint, redirect, request, url_for, jsonify, render_template
 
 # NLP packages
@@ -25,16 +25,26 @@ def eval_url():
 def nlp_frontend():
     if request.method == 'POST':
         selected_url = request.form.get('url-select')
-        article = get_and_parse(selected_url)
-        sentiment = vader(article)
+        if checkers.is_url(selected_url):
+            article = get_and_parse(selected_url)
+            sentiment = vader(article)
+        else:
+            return render_template(
+                'nlp_example/frontend.html',
+                selected_url = selected_url,
+                article_title = 'Not a valid url',
+                article_keywords = 'Not a valid url',
+                article_summary = 'Not a valid url',
+                article_sentiment = 0
+            )
     else:
-        selected_url = 'https://www.cnn.com/2020/08/17/us/coronavirus-college-university/index.html'
+        selected_url = 'https://www.opb.org/article/2020/08/30/portland-trump-cruise-rally-protest-rogue-river-pendleton/'
         article = get_and_parse(selected_url)
         sentiment = vader(article)
 
     return render_template(
         'nlp_example/frontend.html',
-        selected_url = article.source_url,
+        selected_url = selected_url,
         article_title = article.title,
         article_keywords = article.keywords,
         article_summary = article.summary,

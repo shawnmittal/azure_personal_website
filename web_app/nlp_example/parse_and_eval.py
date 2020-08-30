@@ -1,4 +1,5 @@
 import nltk
+import re
 from newspaper import Article
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
