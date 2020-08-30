@@ -1,0 +1,13 @@
+{% block content %}
+    <div class="container">
+        <form name="url-form" action="" method="POST">
+            URL : <input type="text" name="url-select"><br>
+            <input type="submit" value="Submit"><br>
+        </form>
+    </div>
+    <p>{{ selected_url }}</p>
+    <p>{{ article_title }}</p>
+    <p>{{ article_keywords }}</p>
+    <p>{{ article_summary }}</p>
+    <p>{{ article_sentiment }}</p>
+{% endblock %}
