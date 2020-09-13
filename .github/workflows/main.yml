@@ -11,16 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout
+    - name: Checkout
       uses: actions/checkout@v2
       # not using standard actions/python@v2. causes dependency problems with some packages
-    - name: install python and dependencies
+    - name: Install Python and Dependencies
       run: |
         sudo apt-get update
         sudo apt-get install python3.7 python3-pip
         sudo rm /usr/bin/python
         sudo ln -s /usr/bin/python3.7 /usr/bin/python
-    - name: run linter for python code
+    - name: Run Linter for Python Code
       run: |
         pip3 install flake8
         sudo apt-get install flake8
@@ -28,21 +28,21 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistic
-    - name: build docker container
+    - name: Build Docker Container
       run: docker build -t localbuild/shawnmittal:test .
-    - name: run docker container
+    - name: Run Docker Container
       run: docker run -d -p 5000:5000 localbuild/shawnmittal:test
-    - name: sleep for 20 seconds
+    - name: Sleep for 10 Seconds
       uses: jakejarvis/wait-action@master
       with:
-        time: '20s'
-    - name: run unittests
+        time: '10s'
+    - name: Run Tests
       run: python3 ./tests/testnlpapi.py
-    - name: container vulnerability scan
+    - name: Container Vulnerability Scan
       uses: anchore/scan-action@master
       with:
         image-reference: "localbuild/shawnmittal:test"
         dockerfile-path: "Dockerfile"
         fail-build: true
-    - name: anchore inline scan JSON results
+    - name: Anchore Inline Scan JSON Results
       run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
