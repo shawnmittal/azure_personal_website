@@ -38,13 +38,8 @@ jobs:
         time: '10s'
     - name: Run Tests
       run: python3 ./tests/testnlpapi.py
-<<<<<<< HEAD
-    - name: Container Vulnerability Scan
-      uses: anchore/scan-action@master
-=======
     - name: container vulnerability scan
       uses: anchore/scan-action@main
->>>>>>> development
       with:
         image-reference: "localbuild/shawnmittal:test"
         dockerfile-path: "Dockerfile"
