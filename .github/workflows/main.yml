@@ -41,6 +41,7 @@ jobs:
       with:
         image: "${{ secrets.REGISTRY_LOGIN_SERVER }}/mittalpersonalwebsite:latest"
         fail-build: false
+        debug: false
         severity-cutoff: "critical"
     - name: Anchore Inline Scan JSON Results
       run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
