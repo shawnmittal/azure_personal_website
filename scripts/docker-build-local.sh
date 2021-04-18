@@ -1,1 +1,2 @@
-docker build -t mittalconsulting/mittalpersonalwebsite:dev .
+#!/bin/bash
+docker build -t mittalconsulting/mittalpersonalwebsite:local .

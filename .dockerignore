@@ -13,3 +13,4 @@ env
 tests/
 .github/
 scripts/
+notebooks/

@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -d --name dev_container -p 80:80 -v $(pwd):/web_app -e FLASK_APP=web_app/webapp.py -e FLASK_DEBUG=1 mittalconsulting/mittalpersonalwebsite:local flask run --host=0.0.0.0 --port=80
